@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+
+      name: test
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: rootroot
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+
+#
+#        filters: stat
+#
+#        maxActive: 20
+#        initialSize: 1
+#        maxWait: 60000
+#        minIdle: 1
+#        timeBetweenEvictionRunsMillis: 60000
+#        minEvictableIdleTimeMillis: 300000
+#        validationQuery: select 'x'
+#        testWhileIdle: true
+#        testOnBorrow: false
+#        testOnReturn: false
+#        poolPreparedStatements: true
+#        maxOpenPreparedStatements: 20
+
+
+
+mybatis:
+
+  mapper-locations: classpath:cn/mapping/*.xml
+  type-aliases-package: cn.model
+
+#pagehelper分页插件
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
